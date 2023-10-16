@@ -64,9 +64,8 @@ make
 
 To clone the repository, run the following script:
 
-
 ```
-git clone https://github.com/anonauthor2023/conext-23.git
+git clone https://github.com/hopnets/practical_deflection.git
 ```
 
 ### Step 4: Building the project
