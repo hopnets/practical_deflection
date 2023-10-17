@@ -84,7 +84,7 @@ Every scenario with large-scale simulation configurations takes days or even wee
 ```
 cd dc_simulations/simulations/sims
 bash download_dist_files_LS_1Gbps.sh
-bash run_1G.sh
+./run_1G.sh 
 ```
 
 ### Step 5: Running the simulations and extracting the results
