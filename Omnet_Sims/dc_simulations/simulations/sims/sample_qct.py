@@ -45,11 +45,11 @@ SERVERS_UNDER_EACH_RACK = 40
 '''
     Directories used for processing the extracted results
 '''
-directory = './results_50_bg_dqps/REQUEST_SENT/'
-directory2 = './results_50_bg_dqps/FLOW_STARTED/'
-directory3 = './results_50_bg_dqps/FLOW_ENDED/'
-directory4 = './results_50_bg_dqps/REPLY_LENGTH_ASKED/'
-directory5 = './results_50_bg_dqps/FLOW_ENDED_QUERY_ID/'
+directory = './results_sample_1g/REQUEST_SENT/'
+directory2 = './results_sample_1g/FLOW_STARTED/'
+directory3 = './results_sample_1g/FLOW_ENDED/'
+directory4 = './results_sample_1g/REPLY_LENGTH_ASKED/'
+directory5 = './results_sample_1g/FLOW_ENDED_QUERY_ID/'
 
 '''
     Classes for processing Response time and QCT
