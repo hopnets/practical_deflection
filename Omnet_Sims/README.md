@@ -77,7 +77,7 @@ cd practical_deflection/Omnet_Sims/
 bash build.sh
 ```
 
-### Small-scale simulations
+### Small-scale simulations: Extra step for functionality evaluation
 
 Every scenario with large-scale simulation configurations takes days or even weeks to complete. Accordingly, we are providing a small-scale sample with 1Gbps links for those interested in evaluating the functionality of the code in a short time. First make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following commands to download the distribution files:
 
