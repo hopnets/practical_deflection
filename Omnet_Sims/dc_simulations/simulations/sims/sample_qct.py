@@ -88,7 +88,7 @@ def plot_figs(x, y, labels, markers, colors):
     if len(colors) < len(y):
         raise Exception("len(colors) != len(y)")
     for i in range(len(y)):
-        plt.plot(x, y[i], label=[labels[i]], marker=markers[i], linewidth=6, color=colors[i], markersize=16, markevery=0.08)
+        plt.plot(x, y[i], label=labels[i], marker=markers[i], linewidth=3, markeredgewidth=3, color=colors[i], markersize=8, markevery=0.08)
     plt.grid()
     plt.xticks(x)
     plt.legend()
