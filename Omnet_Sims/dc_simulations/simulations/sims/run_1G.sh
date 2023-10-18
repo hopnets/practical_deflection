@@ -64,3 +64,5 @@ cp results/*.out logs/dctcp_quantile_pd_1G/
 echo "Moving the extracted results to results_1G"
 rm -rf results_1G
 mv extracted_results results_1G
+
+python3 sample_qct.py

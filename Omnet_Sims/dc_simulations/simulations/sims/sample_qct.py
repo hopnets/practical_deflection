@@ -14,17 +14,17 @@ from matplotlib import pyplot as plt
 LEAF_SPINE = 0
 FAT_TREE = 1
 TOPOLOGY = LEAF_SPINE
-CATEGORIES = ["dctcp_dist_pd"]
+CATEGORIES = ["dctcp_ecmp", "dctcp_dibs", "dctcp_sd", "dctcp_vertigo", "dctcp_quantile_pd", "dctcp_dist_pd"]
 
 TTLS = [250]    # TTL values
 RANDOM_POWER_FACTOR = [2]   # Power-of-N choices
 RANDOM_POWER_BOUNCE_FACTOR = [2]   # Power-of-N choices
-NUM_REQUESTS_PER_BURST = [100]      # Incast scales
-BG_INTER_ARRIVAL_MULT = [0.2428]    # BG inter-arrival multipliers
-INCAST_INTER_ARRIVAL_MULT = [0.125, 0.0405, 0.0243, 0.0174, 0.0135]
-INCAST_FLOW_SIZE = [40000]     # Incast flow size
-MARKING_TIMER = ["0.00036"]    # Value of timer of the marking component
-ORDERING_TIMER = ["0.00036"]    # Value of timer of the ordering component
+NUM_REQUESTS_PER_BURST = [40]      # Incast scales
+BG_INTER_ARRIVAL_MULT = [11.85]    # BG inter-arrival multipliers
+INCAST_INTER_ARRIVAL_MULT = [1, 0.33, 0.2, 0.14, 0.11]
+INCAST_FLOW_SIZE = [20000]     # Incast flow size
+MARKING_TIMER = ["0.00120"]    # Value of timer of the marking component
+ORDERING_TIMER = ["0.00120"]    # Value of timer of the ordering component
 rep_num = 0
 NUM_BURSTY_APPS = 1
 BASE_NUM_BACKGROUND_CONNECTIONS_TO_OTHER_SERVERS = 1
@@ -45,11 +45,11 @@ SERVERS_UNDER_EACH_RACK = 40
 '''
     Directories used for processing the extracted results
 '''
-directory = './results_sample_1g/REQUEST_SENT/'
-directory2 = './results_sample_1g/FLOW_STARTED/'
-directory3 = './results_sample_1g/FLOW_ENDED/'
-directory4 = './results_sample_1g/REPLY_LENGTH_ASKED/'
-directory5 = './results_sample_1g/FLOW_ENDED_QUERY_ID/'
+directory = './results_1G/REQUEST_SENT/'
+directory2 = './results_1G/FLOW_STARTED/'
+directory3 = './results_1G/FLOW_ENDED/'
+directory4 = './results_1G/REPLY_LENGTH_ASKED/'
+directory5 = './results_1G/FLOW_ENDED_QUERY_ID/'
 
 '''
     Classes for processing Response time and QCT
@@ -108,7 +108,7 @@ for category in CATEGORIES:
     #records
     mean_qct = []
     tail_qct = []
-
+    print("{}:\n".format(category))
     for ttl in TTLS:
         for random_power_factor in RANDOM_POWER_FACTOR:
             for random_power_bounce_factor in RANDOM_POWER_BOUNCE_FACTOR:
@@ -429,7 +429,7 @@ for category in CATEGORIES:
                                             mean_qct.append(np.mean(qct_info))
                                             tail_qct.append(np.percentile(qct_info, 99))
 
-                                            print(file_name)
+#                                            print(file_name)
                                             print('Mean QCT, tail QCT\n{}, {}'
                                                     .format(np.mean(qct_info),
                                                             np.percentile(qct_info, 99)))
@@ -440,6 +440,8 @@ for category in CATEGORIES:
     all_mean_qct.append(mean_qct)
     all_tail_qct.append(tail_qct)
 
+
+'''
 
 if len(all_mean_qct) != len(CATEGORIES):
     raise Exception("len(all_mean_qct) != len(CATEGORIES)")
@@ -464,3 +466,5 @@ plt.xlabel('Load (%)')
 plt.ylabel('Tail QCT (s)')
 plt.savefig("figs/{}.png".format('simple_tail_qct'))
 plt.close()
+
+'''
