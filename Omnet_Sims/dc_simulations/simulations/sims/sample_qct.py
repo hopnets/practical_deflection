@@ -14,7 +14,7 @@ from matplotlib import pyplot as plt
 LEAF_SPINE = 0
 FAT_TREE = 1
 TOPOLOGY = LEAF_SPINE
-CATEGORIES = ["dctcp_ecmp", "dctcp_dibs", "dctcp_sd", "dctcp_vertigo", "dctcp_quantile_pd", "dctcp_dist_pd"]
+CATEGORIES = ["dctcp_ecmp", "dctcp_sd", "dctcp_dibs", "dctcp_vertigo", "dctcp_quantile_pd", "dctcp_dist_pd"]
 
 TTLS = [250]    # TTL values
 RANDOM_POWER_FACTOR = [2]   # Power-of-N choices
@@ -98,8 +98,8 @@ def plot_figs(x, y, labels, markers, colors):
 '''
 
 # In this case: load
-colors = ['k', 'dodgerblue', 'r', 'springgreen']
-markers = ['o', 'X', 'v', '|']
+colors = ['k', 'm', 'silver', 'maroon', 'darkorange', 'lime']
+markers = ['o', 'D', 'x', 's', 'd', '|']
 x_values = [55, 65, 75, 85, 95]
 all_mean_qct = []
 all_tail_qct = []
@@ -441,7 +441,7 @@ for category in CATEGORIES:
     all_tail_qct.append(tail_qct)
 
 
-'''
+
 
 if len(all_mean_qct) != len(CATEGORIES):
     raise Exception("len(all_mean_qct) != len(CATEGORIES)")
@@ -467,4 +467,4 @@ plt.ylabel('Tail QCT (s)')
 plt.savefig("figs/{}.png".format('simple_tail_qct'))
 plt.close()
 
-'''
+
