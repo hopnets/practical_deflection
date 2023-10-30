@@ -212,25 +212,40 @@ The results above illustrate that Simple Deflection performs comparably to DIBS 
 
 ### Step 5: Running the simulations and extracting the results
 
-The config files for large-scale simulations can be used for evaluating Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, and ECMP while using TCP, DCTCP, Swift, and Bolt as the transport protocol. To run the large-scale simulations, first, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following command to download the distribution files, run the simulations, and extract the results:
+The config files for large-scale simulations can be used for evaluating Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, and ECMP while using TCP, DCTCP, Swift, and Bolt as the transport protocol. To run the large-scale simulations, first, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following commands to download the distribution files:
 
 ```
 cd dc_simulations/simulations/sims
 bash download_dist_files_LS.sh
-./run_50_bg_dqps_dprotocol.sh
 ```
 
-The commands above simulated the following scenarios with TCP, DCTCP, Swift, and Bolt under various degrees of load in a 2-tier leaf-spine topology:
+After the distribution files are downloaded, run the following commands based on the trasnport protocol for which you want to run your simulations:
 
-* ECMP
-* DIBS
-* Sample Deflection
-* Vertigo
-* AIFO
-* Quantile_PD
-* Dist_PD
+**TCP:**
 
-We run each technique under 55%, 65%, 75%, 85%, and 95% load. Every scenario is expected to take less than 3 days. After the simulations are over, our bash script automatically runs the Python code, prints the results, plots the figures, and saves them in the ./figs directory.
+```
+./run_50_bg_dqps_tcp.sh
+```
+
+**DCTCP:**
+
+```
+./run_50_bg_dqps_dctcp.sh
+```
+
+**Swift:**
+
+```
+./run_50_bg_dqps_swift.sh
+```
+
+**Bolt:**
+
+```
+./run_50_bg_dqps_bolt.sh
+```
+
+The commands above run each technique under 55%, 65%, 75%, 85%, and 95% load.After the simulations are over, our bash script automatically runs the Python code, prints the results, plots the figures, and saves them in the ./figs directory. Every scenario is expected to take less than 3 days. Accordingly, it would take less than 18 days for the simulations related to each transport protocol to be finished. We refer you to the **small-scale simulations** section if you would like to see some results in a shorter time.
 
 ### Run large-scale simulations under other scenarios [Optional]
 
@@ -244,6 +259,7 @@ bash download_dist_files_FatTree.sh # Run this if you want to run fat-tree simul
 ```
 
 After the distribution files are downloaded, you can use the provided bash scripts to run the large-scale simulations for different incast arrival rates (dqps), flow sizes, and scales. Additionally, you can run the simulations for 100 Gbps link rates, fat-tree topology, and component analysis. The list of the provided bash scripts is as below:
+
 * **Different arrival rates with 25%, 50%, and 75% background load and 10/40 Gbps links**
   * run_25_bg_dqps.sh (uses ```omnetpp_25_bg_dqps.ini```)
   * run_50_bg_dqps.sh (uses ```omnetpp_50_bg_dqps.ini```)
