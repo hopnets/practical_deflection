@@ -77,9 +77,9 @@ cd practical_deflection/Omnet_Sims/
 bash build.sh
 ```
 
-### Small-scale simulations: Extra step for functionality evaluation
+### Small-scale simulations: Extra step for evaluation in a short time
 
-Every scenario with large-scale simulation configurations takes days or even weeks to complete. Accordingly, we are providing a small-scale sample with 1Gbps links for those interested in evaluating the functionality of the code in a short time. First make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following commands to download the distribution files:
+Every scenario with large-scale simulation configurations takes days or even weeks to complete. Accordingly, we are providing a small-scale sample with 1Gbps links for those interested in evaluating the code in a short time. First, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following commands to download the distribution files:
 
 ```
 cd dc_simulations/simulations/sims
@@ -212,7 +212,27 @@ The results above illustrate that Simple Deflection performs comparably to DIBS 
 
 ### Step 5: Running the simulations and extracting the results
 
-The config files for large-scale simulations can be used for evaluating Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, ECMP, and AIFO while using TCP, DCTCP, Swift, and Bolt as the transport protocol. To run the large-scale simulations, first make sure that you are in the right directory ("practical_deflection/Omnet_Sims/dc_simulations/simulations/sims") and then use the following commands to download the distribution files depending on the simulations you want to run (**Make sure to execute only one of these commands as running both of them will overwrite some distribution files and you will face errors while running simulations**):
+The config files for large-scale simulations can be used for evaluating Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, ECMP, and AIFO while using TCP, DCTCP, Swift, and Bolt as the transport protocol. To run the large-scale simulations, first, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following command to download the distribution files, run the simulations, and extract the results:
+
+```
+cd dc_simulations/simulations/sims
+bash download_dist_files_LS.sh
+./run_50_bg_dqps_dprotocol.sh
+```
+
+The commands above simulated the following scenarios with TCP, DCTCP, Swift, and Bolt under various degrees of load in a 2-tier leaf-spine topology:
+
+* ECMP
+* DIBS
+* Sample Deflection
+* Vertigo
+* AIFO
+* Quantile_PD
+* Dist_PD
+
+### Run large-scale simulations under other scenarios [Optional]
+
+If you want to run Simple and Preemptive Deflection, make sure that you are in the right directory ("practical_deflection/Omnet_Sims/dc_simulations/simulations/sims") and extract the distribution files depending on the simulations you want to run (**Make sure to execute only one of these commands as running both of them will overwrite some distribution files and you will face errors while running simulations**):
 
 ```
 bash download_dist_files_LS.sh # Run this if you want to run leaf-spine simulations.
@@ -221,7 +241,7 @@ bash download_dist_files_LS.sh # Run this if you want to run leaf-spine simulati
 bash download_dist_files_FatTree.sh # Run this if you want to run fat-tree simulations.
 ```
 
-After the distribution files are downloaded, you can use the provided bash scripts to run the large scale simulations for different incast arrival rates (dqps), flow sizes, and scales. Additionally, you can run the simulations for 100 Gbps link rates, fat-tree topology, and component analysis. The list of the provided bash scripts is as below:
+After the distribution files are downloaded, you can use the provided bash scripts to run the large-scale simulations for different incast arrival rates (dqps), flow sizes, and scales. Additionally, you can run the simulations for 100 Gbps link rates, fat-tree topology, and component analysis. The list of the provided bash scripts is as below:
 * **Different arrival rates with 25%, 50%, and 75% background load and 10/40 Gbps links**
   * run_25_bg_dqps.sh (uses ```omnetpp_25_bg_dqps.ini```)
   * run_50_bg_dqps.sh (uses ```omnetpp_50_bg_dqps.ini```)
