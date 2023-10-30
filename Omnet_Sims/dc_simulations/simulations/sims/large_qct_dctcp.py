@@ -14,17 +14,14 @@ from matplotlib import pyplot as plt
 LEAF_SPINE = 0
 FAT_TREE = 1
 TOPOLOGY = LEAF_SPINE
-CATEGORIES = ["tcp_ecmp", "tcp_sd", "tcp_dibs", "tcp_vertigo", "tcp_quantile_pd", "tcp_dist_pd", 
-"dctcp_ecmp", "dctcp_sd", "dctcp_dibs", "dctcp_vertigo", "dctcp_quantile_pd", "dctcp_dist_pd", 
-"swift_ecmp", "swift_sd", "swift_dibs", "swift_vertigo", "swift_quantile_pd", "swift_dist_pd", 
-"bolt_ecmp", "bolt_sd", "bolt_dibs", "bolt_vertigo", "bolt_quantile_pd", "bolt_dist_pd"]
+CATEGORIES = ["dctcp_ecmp", "dctcp_sd", "dctcp_dibs", "dctcp_vertigo", "dctcp_quantile_pd", "dctcp_dist_pd"]
 
 TTLS = [250]    # TTL values
 RANDOM_POWER_FACTOR = [2]   # Power-of-N choices
 RANDOM_POWER_BOUNCE_FACTOR = [2]   # Power-of-N choices
 NUM_REQUESTS_PER_BURST = [100]      # Incast scales
-BG_INTER_ARRIVAL_MULT = [11.85]    # BG inter-arrival multipliers
-INCAST_INTER_ARRIVAL_MULT = [1, 0.33, 0.2, 0.14, 0.11]
+BG_INTER_ARRIVAL_MULT = [0.2428]    # BG inter-arrival multipliers
+INCAST_INTER_ARRIVAL_MULT = [0.125, 0.0405, 0.0243, 0.0174, 0.0135]
 INCAST_FLOW_SIZE = [40000]     # Incast flow size
 MARKING_TIMER = ["0.00036"]    # Value of timer of the marking component
 ORDERING_TIMER = ["0.00036"]    # Value of timer of the ordering component
@@ -48,11 +45,11 @@ SERVERS_UNDER_EACH_RACK = 40
 '''
     Directories used for processing the extracted results
 '''
-directory = './results_50_bg_dqps_dproto/REQUEST_SENT/'
-directory2 = './results_50_bg_dqps_dproto/FLOW_STARTED/'
-directory3 = './results_50_bg_dqps_dproto/FLOW_ENDED/'
-directory4 = './results_50_bg_dqps_dproto/REPLY_LENGTH_ASKED/'
-directory5 = './results_50_bg_dqps_dproto/FLOW_ENDED_QUERY_ID/'
+directory = './results_50_bg_dqps_dctcp/REQUEST_SENT/'
+directory2 = './results_50_bg_dqps_dctcp/FLOW_STARTED/'
+directory3 = './results_50_bg_dqps_dctcp/FLOW_ENDED/'
+directory4 = './results_50_bg_dqps_dctcp/REPLY_LENGTH_ASKED/'
+directory5 = './results_50_bg_dqps_dctcp/FLOW_ENDED_QUERY_ID/'
 
 '''
     Classes for processing Response time and QCT
@@ -461,13 +458,13 @@ if len(all_tail_qct[0]) != len(x_values):
 plot_figs(x_values, all_mean_qct, CATEGORIES, markers, colors)
 plt.xlabel('Load (%)')
 plt.ylabel('Mean QCT (s)')
-plt.savefig("figs/{}.png".format('simple_mean_qct'))
+plt.savefig("figs/{}.png".format('mean_qct_dctcp'))
 plt.close()
 
 plot_figs(x_values, all_tail_qct, CATEGORIES, markers, colors)
 plt.xlabel('Load (%)')
 plt.ylabel('Tail QCT (s)')
-plt.savefig("figs/{}.png".format('simple_tail_qct'))
+plt.savefig("figs/{}.png".format('tail_qct_dctcp'))
 plt.close()
 
 
