@@ -212,7 +212,7 @@ The results above illustrate that Simple Deflection performs comparably to DIBS 
 
 ### Step 5: Running the simulations and extracting the results
 
-The config files for large-scale simulations can be used for evaluating Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, ECMP, and AIFO while using TCP, DCTCP, Swift, and Bolt as the transport protocol. To run the large-scale simulations, first, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following command to download the distribution files, run the simulations, and extract the results:
+The config files for large-scale simulations can be used for evaluating Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, and ECMP while using TCP, DCTCP, Swift, and Bolt as the transport protocol. To run the large-scale simulations, first, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following command to download the distribution files, run the simulations, and extract the results:
 
 ```
 cd dc_simulations/simulations/sims
@@ -232,7 +232,7 @@ The commands above simulated the following scenarios with TCP, DCTCP, Swift, and
 
 ### Run large-scale simulations under other scenarios [Optional]
 
-If you want to run Simple and Preemptive Deflection, make sure that you are in the right directory ("practical_deflection/Omnet_Sims/dc_simulations/simulations/sims") and extract the distribution files depending on the simulations you want to run (**Make sure to execute only one of these commands as running both of them will overwrite some distribution files and you will face errors while running simulations**):
+If you want to run Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, ECMP, and AIFO under other scenarios, make sure that you are in the right directory ("practical_deflection/Omnet_Sims/dc_simulations/simulations/sims") and extract the distribution files depending on the simulations you want to run (**Make sure to execute only one of these commands as running both of them will overwrite some distribution files and you will face errors while running simulations**):
 
 ```
 bash download_dist_files_LS.sh # Run this if you want to run leaf-spine simulations.
