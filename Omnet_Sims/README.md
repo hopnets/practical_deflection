@@ -96,7 +96,7 @@ The commands above, download the distribution files for the small-scale simulati
 * DCTCP + Quantile_PD
 * DCTCP + Dist_PD
 
-We run each technique under 55%, 65%, 75%, 85%, and 95% load. Every scenario is expected to take less than 20 minutes. After the simulations are over, our bash script automatically runs the Python code, prints the results, plots the figures, and saves them in the ./figs directory. The sample output printed should be as follows:
+We run each technique under 55%, 65%, 75%, 85%, and 95% load. Every scenario is expected to take less than 30 minutes. After the simulations are over, our bash script automatically runs the Python code, prints the results, plots the figures, and saves them in the ./figs directory. The sample output printed should be as follows:
 
 ```
 dctcp_ecmp:
@@ -229,6 +229,8 @@ The commands above simulated the following scenarios with TCP, DCTCP, Swift, and
 * AIFO
 * Quantile_PD
 * Dist_PD
+
+We run each technique under 55%, 65%, 75%, 85%, and 95% load. Every scenario is expected to take less than 3 days. After the simulations are over, our bash script automatically runs the Python code, prints the results, plots the figures, and saves them in the ./figs directory.
 
 ### Run large-scale simulations under other scenarios [Optional]
 
