@@ -210,7 +210,7 @@ Mean QCT, tail QCT
 
 The results above illustrate that Simple Deflection performs comparably to DIBS and achieves 2.6x lower mean QCT than ECMP under 55% load. With DCTCP under 95% load, Preemptive Deflection achieves the middle ground between Vertigo and Simple Deflection and achieves 24% and 43% lower mean QCT than ECMP and Simple Deflection, respectively.
 
-### Step 5: Running the simulations and extracting the results
+### Step 5: Running the large-scale simulations and extracting the results
 
 The config files for large-scale simulations can be used for evaluating Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, and ECMP while using TCP, DCTCP, Swift, and Bolt as the transport protocol. To run the large-scale simulations, first, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following commands to download the distribution files:
 
