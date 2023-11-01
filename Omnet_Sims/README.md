@@ -2,11 +2,11 @@
 
 This repository provides the instructions and files required to run the simulations and extract the results. We use [Omnet++ simulator](https://omnetpp.org/) and INET framework to run the simulations. [Omnet++ manual](https://doc.omnetpp.org/omnetpp/manual/) and its examples are good references for introduction to the simulator. We ran our simulations on Ubuntu machines (version: 18.04) so all the commands are for Ubuntu.To run the simulations, you should follow the following steps:
 
-* [Step 1: Install dependencies](#step-1-installing-dependencies)
-* [Step 2: Install Omnet++](#step-2-installing-omnet)
-* [Step 3: Clone the repository](#step-3-cloning-the-repository)
-* [Step 4: Build the project](#step-4-building-the-project)
-* [Step 5: Run the simulations and extract the results](#small-scale-simulations-extra-step-for-evaluation-in-a-short-time)
+* [Step 1: Install dependencies](#step-1-installing-dependencies) (~ 10 minutes)
+* [Step 2: Install Omnet++](#step-2-installing-omnet)  (~ 15 minutes)
+* [Step 3: Clone the repository](#step-3-cloning-the-repository) (~ 5 minutes)
+* [Step 4: Build the project](#step-4-building-the-project) (~ 20 minutes)
+* [Step 5: Run the simulations and extract the results](#small-scale-simulations-extra-step-for-evaluation-in-a-short-time) (This step can take from a few hours to one/two weeks depending on the simulations that you run)
 
 ### Step 1: Installing dependencies
 
