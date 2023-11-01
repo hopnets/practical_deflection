@@ -79,7 +79,7 @@ bash build.sh
 
 ### Small-scale simulations: Extra step for evaluation in a short time
 
-Every scenario with large-scale simulation configurations takes days or even weeks to complete. Accordingly, we are providing a small-scale sample with 1Gbps links for those interested in evaluating the code in a short time. First, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following commands to download the distribution files:
+Every scenario with [large-scale simulation](#step-5-running-the-simulations-and-extracting-the-results) configurations takes days or even weeks to complete. Accordingly, we are providing a small-scale sample with 1Gbps links for those interested in evaluating the code in a short time. First, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following commands to download the distribution files:
 
 ```
 cd dc_simulations/simulations/sims
