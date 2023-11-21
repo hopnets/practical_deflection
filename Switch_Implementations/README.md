@@ -1,6 +1,6 @@
 ## Summary
 
-This directory contains the code for implementing the data plane and control plan of Simple and Preemptive Deflection.
+This directory contains the code for implementing the data plane and control plane of Simple and Preemptive Deflection. We used **Intel SDE 9.7.0** for compiling our code.
 
 * Simple Deflection
   * Directory name: Simple_Deflection
