@@ -1,6 +1,6 @@
 # Omnet++ simulation files
 
-This repository provides the instructions and files required to run the simulations and extract the results. We use [Omnet++ simulator](https://omnetpp.org/) and INET framework to run the simulations. [Omnet++ manual](https://doc.omnetpp.org/omnetpp/manual/) and its examples are good references for introduction to the simulator. We ran our simulations on Ubuntu machines (version: 18.04) so all the commands are for Ubuntu.To run the simulations, you should follow the following steps:
+This repository provides the instructions and files required to run the simulations and extract the results. We use [Omnet++ simulator](https://omnetpp.org/) and INET framework to run the simulations. [Omnet++ manual](https://doc.omnetpp.org/omnetpp/manual/) and its examples are good references for introduction to the simulator. We ran our simulations on Ubuntu machines (version: 18.04) so all the commands are for Ubuntu. To run the simulations, you should follow the following steps:
 
 * [Step 1: Install dependencies](#step-1-installing-dependencies) (~ 10 minutes)
 * [Step 2: Install Omnet++](#step-2-installing-omnet)  (~ 15 minutes)
@@ -90,7 +90,7 @@ git submodule update
 
 ### Small-scale simulations: Extra step for evaluation in a short time
 
-Every scenario with [large-scale simulation](#step-6-running-the-simulations-and-extracting-the-results) configurations takes days or even weeks to complete. Accordingly, we are providing a small-scale sample with 1Gbps links for those interested in evaluating the code in a short time. First, make sure that you are in the right directory ("practical_deflection/Omnet_Sims/dc_simulations/simulations/sims") and then use the following commands to extract the distribution files:
+Every scenario with [large-scale simulation](#step-6-running-the-large-scale-simulations-and-extracting-the-results) configurations takes days or even weeks to complete. Accordingly, we are providing a small-scale sample with 1Gbps links for those interested in evaluating the code in a short time. First, make sure that you are in the right directory ("practical_deflection/Omnet_Sims/dc_simulations/simulations/sims") and then use the following commands to extract the distribution files:
 
 ```
 bash extract_dist_files_LS_1Gbps.sh
@@ -228,7 +228,7 @@ The config files for large-scale simulations can be used for evaluating Simple D
 bash extract_dist_files_LS.sh
 ```
 
-After the distribution files are downloaded, run the following commands based on the trasnport protocol for which you want to run your simulations:
+After the distribution files are extracted, run the following commands based on the transport protocol for which you want to run your simulations:
 
 **TCP:**
 
@@ -254,7 +254,7 @@ After the distribution files are downloaded, run the following commands based on
 ./run_50_bg_dqps_bolt.sh
 ```
 
-The commands above run each technique under 55%, 65%, 75%, 85%, and 95% load.After the simulations are over, our bash script automatically runs the Python code, prints the results, plots the figures, and saves them in the ./figs directory. Every scenario is expected to take less than 3 days. Accordingly, it would take less than 18 days for the simulations related to each transport protocol to be finished. We refer you to the **small-scale simulations** section if you would like to see some results in a shorter time.
+The commands above run each technique under 55%, 65%, 75%, 85%, and 95% load. After the simulations are over, our bash script automatically runs the Python code, prints the results, plots the figures, and saves them in the ./figs directory. Every scenario is expected to take less than 3 days. Accordingly, it would take less than 18 days for the simulations related to each transport protocol to be finished. We refer you to the **small-scale simulations** section if you would like to see some results in a shorter time.
 
 ### Run large-scale simulations under other scenarios [Optional]
 
@@ -267,7 +267,7 @@ bash extract_dist_files_LS.sh # Run this if you want to run leaf-spine simulatio
 bash extract_dist_files_FatTree.sh # Run this if you want to run fat-tree simulations.
 ```
 
-After the distribution files are downloaded, you can use the provided bash scripts to run the large-scale simulations for different incast arrival rates (dqps), flow sizes, and scales. Additionally, you can run the simulations for 100 Gbps link rates, fat-tree topology, and component analysis. The list of the provided bash scripts is as below:
+After the distribution files are extracted, you can use the provided bash scripts to run the large-scale simulations for different incast arrival rates (dqps), flow sizes, and scales. Additionally, you can run the simulations for 100 Gbps link rates, fat-tree topology, and component analysis. The list of the provided bash scripts is as below:
 
 * **Different arrival rates with 25%, 50%, and 75% background load and 10/40 Gbps links**
   * run_25_bg_dqps.sh (uses ```omnetpp_25_bg_dqps.ini```)
