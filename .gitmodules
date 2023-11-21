@@ -4,3 +4,6 @@
 [submodule "Omnet_Sims/dc_simulations/simulations/sims/dist_files_40_10gbps"]
 	path = Omnet_Sims/dc_simulations/simulations/sims/dist_files_40_10gbps
 	url = https://bitbucket.org/dc_group/dist_files_40_10gbps.git
+[submodule "Omnet_Sims/dc_simulations/simulations/sims/dist_files_100gbps"]
+	path = Omnet_Sims/dc_simulations/simulations/sims/dist_files_100gbps
+	url = https://bitbucket.org/dc_group/dist_files_100gbps.git
