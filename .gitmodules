@@ -1,0 +1,3 @@
+[submodule "Omnet_Sims/dc_simulations/simulations/sims/dist_files_1gbps"]
+	path = Omnet_Sims/dc_simulations/simulations/sims/dist_files_1gbps
+	url = https://bitbucket.org/dc_group/dist_files_1gbps.git
