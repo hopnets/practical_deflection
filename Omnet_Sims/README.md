@@ -6,7 +6,7 @@ This repository provides the instructions and files required to run the simulati
 * [Step 2: Install Omnet++](#step-2-installing-omnet)  (~ 15 minutes)
 * [Step 3: Clone the repository](#step-3-cloning-the-repository) (~ 5 minutes)
 * [Step 4: Build the project](#step-4-building-the-project) (~ 20 minutes)
-* [Step 5: Downloading distribution files](#step-4-building-the-project) (~ 15 minutes)
+* [Step 5: Downloading distribution files](#step-5-downloading-distribution-files) (~ 15 minutes)
 * [Step 6: Run the simulations and extract the results](#small-scale-simulations-extra-step-for-evaluation-in-a-short-time) (This step can take from a few hours to one/two weeks depending on the simulations that you run)
 
 ### Step 1: Installing dependencies
@@ -80,20 +80,20 @@ bash build.sh
 
 ### Step 5: Downloading distribution files
 
-To download the distribution files, run the following commands:
+To download the distribution files, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then run the following commands:
 
 ```
+cd dc_simulations/simulations/sims
 git submodule init
 git submodule update
 ```
 
 ### Small-scale simulations: Extra step for evaluation in a short time
 
-Every scenario with [large-scale simulation](#step-5-running-the-simulations-and-extracting-the-results) configurations takes days or even weeks to complete. Accordingly, we are providing a small-scale sample with 1Gbps links for those interested in evaluating the code in a short time. First, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following commands to download the distribution files:
+Every scenario with [large-scale simulation](#step-6-running-the-simulations-and-extracting-the-results) configurations takes days or even weeks to complete. Accordingly, we are providing a small-scale sample with 1Gbps links for those interested in evaluating the code in a short time. First, make sure that you are in the right directory ("practical_deflection/Omnet_Sims/dc_simulations/simulations/sims") and then use the following commands to extract the distribution files:
 
 ```
-cd dc_simulations/simulations/sims
-bash download_dist_files_LS_1Gbps.sh
+bash extract_dist_files_LS_1Gbps.sh
 ./run_1G.sh 
 ```
 
@@ -222,11 +222,10 @@ The results above illustrate that Simple Deflection performs comparably to DIBS 
 
 ### Step 6: Running the large-scale simulations and extracting the results
 
-The config files for large-scale simulations can be used for evaluating Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, and ECMP while using TCP, DCTCP, Swift, and Bolt as the transport protocol. To run the large-scale simulations, first, make sure that you are in the right directory ("practical_deflection/Omnet_Sims") and then use the following commands to download the distribution files:
+The config files for large-scale simulations can be used for evaluating Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, and ECMP while using TCP, DCTCP, Swift, and Bolt as the transport protocol. To run the large-scale simulations, first, make sure that you are in the right directory ("practical_deflection/Omnet_Sims/dc_simulations/simulations/sims") and then use the following commands to download the distribution files:
 
 ```
-cd dc_simulations/simulations/sims
-bash download_dist_files_LS.sh
+bash extract_dist_files_LS.sh
 ```
 
 After the distribution files are downloaded, run the following commands based on the trasnport protocol for which you want to run your simulations:
@@ -262,10 +261,10 @@ The commands above run each technique under 55%, 65%, 75%, 85%, and 95% load.Aft
 If you want to run Simple Deflection, quantile-based Preemptive Deflection, distribution-based Preemptive Deflection, Vertigo, DIBS, ECMP, and AIFO under other scenarios, make sure that you are in the right directory ("practical_deflection/Omnet_Sims/dc_simulations/simulations/sims") and extract the distribution files depending on the simulations you want to run (**Make sure to execute only one of these commands as running both of them will overwrite some distribution files and you will face errors while running simulations**):
 
 ```
-bash download_dist_files_LS.sh # Run this if you want to run leaf-spine simulations.
+bash extract_dist_files_LS.sh # Run this if you want to run leaf-spine simulations.
 ```
 ```
-bash download_dist_files_FatTree.sh # Run this if you want to run fat-tree simulations.
+bash extract_dist_files_FatTree.sh # Run this if you want to run fat-tree simulations.
 ```
 
 After the distribution files are downloaded, you can use the provided bash scripts to run the large-scale simulations for different incast arrival rates (dqps), flow sizes, and scales. Additionally, you can run the simulations for 100 Gbps link rates, fat-tree topology, and component analysis. The list of the provided bash scripts is as below:
