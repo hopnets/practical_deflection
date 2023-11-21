@@ -1,11 +1,6 @@
-echo "Downloading dist files..."
+echo "Extracting dist files!"
 
 mkdir distributions
-
-git clone https://sepehrabdous96@bitbucket.org/dc_group/dist_files_40_10gbps.git
-git clone https://sepehrabdous96@bitbucket.org/dc_group/dist_files_100gbps.git
-
-echo "Extracting dist files!"
 
 mv dist_files_40_10gbps/files/* distributions/
 mv dist_files_100gbps/LS_100G_OR_10CORE/* distributions/
